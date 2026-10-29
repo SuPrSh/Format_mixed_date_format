@@ -66,3 +66,11 @@ Logger data are not included in this repository.
 ## Author
 Surya Sharma, Concordia University, Montreal, suryapdsharma@gmail.com
 
+
+| Step | Input → Output | What happens |
+|---|---|---|
+| 1. Fix dates | `1.raw` → `2.fixed` | Reads every logger CSV, detects the date format of each file (MM/DD, DD/MM or ISO), and writes all dates as DD-MM-YYYY. Converts pressure from psi to kPa where recorded. |
+| 2. Clean | `2.fixed` → `3.cleaned` | Removes readings logged while the loggers were out of the water (retrieval and redeployment). |
+| 3. Daily summary | `3.cleaned` → `4.daily` | Calculates daily minimum, mean and maximum temperature, and the number of readings per day. |
+| 4. Plots | `3.cleaned` → `5.plots` | Plots every reading with the daily mean line, one PNG per logger. |
+
