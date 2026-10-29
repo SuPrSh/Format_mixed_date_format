@@ -9,7 +9,7 @@ Step 4: Plots           3.cleaned` → `5.plots   #Plots every reading with the 
 
 ## Folder structure
 The script expects this layout. Each numbered folder has one sub-folder per logger retrieval (e.g. `JUN2025`).
-
+```
 Working dir/
 ├── fix_mixed_dates.R
 ├── README.md
@@ -18,7 +18,7 @@ Working dir/
 ├── 3.cleaned/      Manual curation and trimming (if required)
 ├── 4.daily/        daily min / mean / max
 └── 5.plots/        
-
+```
 
 ## Requirements
 - R (4.1 or later)
