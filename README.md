@@ -2,10 +2,12 @@
 R code for fixing mixed date formats in HOBO temperature logger data files.
 
 ## What the script does
-Step 1: Fix dates       1.raw → 2.fixed         #Reads every logger CSV, detects the date format of each file and writes all dates as DD-MM-YYYY.
-Step 2: Clean           2.fixed → 3.cleaned     #Removes readings logged while the loggers were out of the water (retrieval and redeployment).
-Step 3: Daily summary   3.cleaned` → `4.daily   #Calculates daily minimum, mean and maximum temperature, and the number of readings per day.
-Step 4: Plots           3.cleaned` → `5.plots   #Plots every reading with the daily mean.
+| Step | Input → Output | Description |
+|---|---|---|
+| 1. Fix dates | `1.raw` → `2.fixed` | Reads every logger CSV, detects each file's date format and writes all dates as DD-MM-YYYY. |
+| 2. Clean (This needs to be done manually) | `2.fixed` → `3.cleaned` | Removes readings logged while loggers were out of the water (retrieval and redeployment). |
+| 3. Daily summary | `3.cleaned` → `4.daily` | Calculates daily minimum, mean and maximum temperature, and readings per day. |
+| 4. Plots | `3.cleaned` → `5.plots` | Plots every reading with the daily mean. |
 
 ## Folder structure
 The script expects this layout. Each numbered folder has one sub-folder per logger retrieval (e.g. `JUN2025`).
@@ -65,12 +67,3 @@ Logger data are not included in this repository.
 
 ## Author
 Surya Sharma, Concordia University, Montreal, suryapdsharma@gmail.com
-
-
-| Step | Input → Output | What happens |
-|---|---|---|
-| 1. Fix dates | `1.raw` → `2.fixed` | Reads every logger CSV, detects the date format of each file (MM/DD, DD/MM or ISO), and writes all dates as DD-MM-YYYY. Converts pressure from psi to kPa where recorded. |
-| 2. Clean | `2.fixed` → `3.cleaned` | Removes readings logged while the loggers were out of the water (retrieval and redeployment). |
-| 3. Daily summary | `3.cleaned` → `4.daily` | Calculates daily minimum, mean and maximum temperature, and the number of readings per day. |
-| 4. Plots | `3.cleaned` → `5.plots` | Plots every reading with the daily mean line, one PNG per logger. |
-
